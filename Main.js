@@ -179,11 +179,42 @@ const initContactForm = () => {
     btn.textContent = 'Sending…';
 
     // Simulate async send
-    setTimeout(() => {
-      form.style.display = 'none';
-      const success = document.querySelector('.form-success');
-      if (success) success.style.display = 'block';
-    }, 1500);
+  
+const templateParams = {
+  full_name: document.getElementById('full-name').value,
+  phone: document.getElementById('phone').value,
+  email: document.getElementById('email').value,
+  service: document.getElementById('service').value,
+  travel_date: document.getElementById('travel-date').value,
+  travel_time: document.getElementById('travel-time').value,
+  pickup: document.getElementById('pickup').value,
+  drop: document.getElementById('drop').value,
+  passengers: document.getElementById('passengers').value,
+  luggage: document.getElementById('luggage').value,
+  vehicle: document.querySelector('input[name="vehicle"]:checked')?.value || "",
+  message: document.getElementById('message').value,
+  source: document.getElementById('source').value
+};
+
+emailjs.send(
+  "service_mrlblt8",
+  "template_curnbsi",
+  templateParams
+)
+.then(() => {
+  form.style.display = 'none';
+
+  const success = document.getElementById('form-success');
+
+  if (success) {
+    success.style.display = 'block';
+  }
+})
+.catch((error) => {
+  console.error("EmailJS Error:", error);
+  alert("Failed to send enquiry.");
+});
+
   });
 };
 initContactForm();
