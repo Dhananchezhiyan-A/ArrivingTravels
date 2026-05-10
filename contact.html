@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Arriving Travels — Book a luxury car, airport transfer or bespoke tour. Call, WhatsApp or fill our enquiry form." />
+  <meta name="keywords" content="contact arriving travels, book luxury car Chennai, chauffeur booking, airport transfer enquiry" />
+  <title>Contact Us — Arriving Travels</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Style.css" />
+
+  <style>
+    /* ═══════════════════════════════════════════
+       CONTACT PAGE — ADDITIONAL STYLES
+    ═══════════════════════════════════════════ */
+
+    /* ── Contact Layout ── */
+    .contact-section { background: var(--dark-2); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* ── Left: Info Card ── */
+    .contact-info-card {
+      background: var(--dark-3);
+      border: 1px solid var(--white-muted);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      position: sticky;
+      top: 100px;
+    }
+    .contact-info-card h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    .contact-info-card > p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 26px;
+    }
+    .contact-detail-icon {
+      width: 46px; height: 46px;
+      background: var(--gold-muted);
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+    .contact-detail:hover .contact-detail-icon {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .contact-detail h5 {
+      font-family: var(--font-accent);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .contact-detail p { font-size: 0.9rem; color: var(--white); line-height: 1.6; }
+    .contact-detail a { color: var(--white); transition: color 0.3s; }
+    .contact-detail a:hover { color: var(--gold); }
+
+    /* Hours Table */
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
+    .hours-table caption {
+      font-family: var(--font-accent);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      text-align: left;
+      padding-bottom: 14px;
+    }
+    .hours-table tr { border-bottom: 1px solid var(--white-muted); }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td {
+      padding: 10px 0;
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+    .hours-table td:last-child { text-align: right; color: var(--gold); }
+    .hours-table .always-on { color: #4CAF50; font-style: italic; }
+
+    /* WhatsApp button */
+    .wa-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 18px 24px;
+      background: #25D366;
+      border-radius: var(--radius);
+      color: var(--white);
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 32px;
+      transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+      font-weight: 600;
+    }
+    .wa-cta-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+    }
+
+    /* Social row */
+    .contact-socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .contact-social-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--white-muted);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: var(--font-accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+    .contact-social-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-social-btn svg { flex-shrink: 0; }
+
+    /* ── Right: Form Card ── */
+    .contact-form-card {
+      background: var(--dark-3);
+      border: 1px solid var(--white-muted);
+      border-radius: var(--radius-lg);
+      padding: 48px 44px;
+    }
+    .contact-form-card h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 6px;
+    }
+    .contact-form-card > p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    /* Form elements */
+    .form-group { margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-accent);
+      font-size: 0.63rem;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .form-group label .req { color: #e57373; margin-left: 3px; }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--dark-4);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      transition: border-color 0.3s, box-shadow 0.3s;
+      outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212,175,55,0.1);
+    }
+    .form-group select {
+      appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 24 24' stroke='%23D4AF37' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 44px;
+    }
+    .form-group select option { background: var(--dark-3); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+
+    /* Date/time row */
+    .form-group input[type="date"],
+    .form-group input[type="time"] {
+      color-scheme: dark;
+    }
+
+    /* Char counter */
+    .char-count {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-align: right;
+      margin-top: 6px;
+    }
+
+    /* Vehicle selector cards */
+    .vehicle-selector {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .vehicle-option { display: none; }
+    .vehicle-option + label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      background: var(--dark-4);
+    }
+    .vehicle-option + label:hover { border-color: rgba(212,175,55,0.4); color: var(--white); }
+    .vehicle-option:checked + label {
+      border-color: var(--gold);
+      background: var(--gold-muted);
+      color: var(--gold);
+    }
+    .vehicle-option + label .v-icon { font-size: 1.2rem; }
+    .vehicle-option + label .v-name { font-family: var(--font-accent); font-size: 0.62rem; letter-spacing: 0.1em; display: block; color: inherit; }
+    .vehicle-option + label .v-cap { font-size: 0.72rem; color: var(--text-dim); }
+
+    /* Submit area */
+    .form-submit-area {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--white-muted);
+    }
+    .form-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      flex: 1;
+      min-width: 200px;
+    }
+    .form-privacy input[type="checkbox"] {
+      width: auto;
+      margin-top: 2px;
+      accent-color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 60px 40px;
+    }
+    .form-success.visible { display: block; animation: fadeUp 0.5s ease; }
+    .success-icon {
+      width: 72px; height: 72px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s both;
+    }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+    .form-success h4 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .form-success p { color: var(--text-light); font-size: 0.95rem; max-width: 420px; margin: 0 auto; }
+    .form-success .success-ref {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--gold-muted);
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: var(--radius);
+      padding: 10px 20px;
+      font-family: var(--font-accent);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+    }
+
+    /* ── Map Section ── */
+    .map-section { background: var(--dark); }
+    .map-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--white-muted);
+      position: relative;
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+      filter: invert(0.92) hue-rotate(185deg) contrast(0.82) saturate(0.8);
+    }
+    .map-overlay-info {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: rgba(0,0,0,0.9);
+      border: 1px solid rgba(212,175,55,0.4);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      backdrop-filter: blur(10px);
+      max-width: 280px;
+    }
+    .map-overlay-info h4 {
+      font-family: var(--font-accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .map-overlay-info p { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; }
+    .map-direction-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-family: var(--font-accent);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(212,175,55,0.4);
+      padding-bottom: 2px;
+      transition: color 0.3s;
+    }
+    .map-direction-btn:hover { color: var(--gold-light); }
+
+    /* ── Contact Stats ── */
+    .response-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .response-stat {
+      text-align: center;
+      padding: 28px 20px;
+      background: var(--dark-3);
+      border: 1px solid var(--white-muted);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.3s;
+    }
+    .response-stat:hover { border-color: rgba(212,175,55,0.4); }
+    .response-stat .rs-icon { font-size: 2rem; margin-bottom: 14px; }
+    .response-stat .rs-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .response-stat .rs-label {
+      font-family: var(--font-accent);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      color: var(--text-dim);
+      text-transform: uppercase;
+    }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--dark-2); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 2px; }
+    .faq-item {
+      border: 1px solid var(--white-muted);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item.open { border-color: rgba(212,175,55,0.4); }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      font-family: var(--font-accent);
+      font-size: 0.76rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-align: left;
+      gap: 16px;
+      transition: color 0.3s;
+    }
+    .faq-item.open .faq-question { color: var(--gold); }
+    .faq-chevron { flex-shrink: 0; transition: transform 0.3s; color: var(--gold); }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 200px; }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 0.87rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .faq-visual { position: sticky; top: 100px; }
+    .faq-img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      display: block;
+    }
+    .faq-support-box {
+      margin-top: 24px;
+      padding: 28px;
+      background: var(--gold-muted);
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+    .faq-support-box .support-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--font-accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .faq-support-box p { font-size: 0.85rem; color: var(--text-light); margin-bottom: 20px; line-height: 1.7; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-info-card { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .vehicle-selector { grid-template-columns: 1fr 1fr; }
+      .response-stats { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .faq-visual { display: none; }
+    }
+    @media (max-width: 600px) {
+      .contact-form-card { padding: 32px 24px; }
+      .contact-info-card { padding: 32px 24px; }
+      .vehicle-selector { grid-template-columns: 1fr; }
+      .form-submit-area { flex-direction: column; }
+      .contact-socials { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ░░ PAGE LOADER ░░ -->
+<div id="page-loader">
+  <div class="loader-logo">ARRIVING TRAVELS</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- ░░ NAVBAR ░░ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.jpeg" alt="Arriving Travels Logo" onerror="this.style.display='none'" />
+      <div class="nav-logo-text">
+        <span class="name">Arriving Travels</span>
+        <span class="tagline">Journey Beyond Destination</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="tariff.html">Tariff</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="contact.html" class="btn btn-gold btn-sm nav-cta"><span>Book Now</span></a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="index.html#services">Services</a>
+  <a href="packages.html">Packages</a>
+  <a href="tariff.html">Tariff</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-gold" style="margin-top:10px;"><span>Book Now</span></a>
+</div>
+
+<!-- ░░ PAGE HERO ░░ -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1604357209793-fca5dca89f97?w=1920&q=80');"></div>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">◆</span>
+        <span>Contact Us</span>
+      </div>
+      <h1 class="section-title" style="font-size:clamp(2.5rem,6vw,5rem);">Let's Plan Your <em>Journey</em></h1>
+      <p style="color:var(--text-light);font-size:1.05rem;margin-top:16px;max-width:520px;">We respond within 30 minutes. Fill the form, call us, or simply send a WhatsApp — we're always ready to craft your perfect trip.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ RESPONSE STATS ░░ -->
+<div style="background:var(--dark-3);border-top:1px solid rgba(212,175,55,0.15);border-bottom:1px solid rgba(212,175,55,0.15);padding:40px 0;">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up">
+        <span class="stat-number" data-target="30" data-suffix=" min">0 min</span>
+        <span class="stat-label">Avg. Response Time</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <span class="stat-number" data-target="24" data-suffix="/7">0/7</span>
+        <span class="stat-label">Support Availability</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="stat-number" data-target="5000" data-suffix="+">0+</span>
+        <span class="stat-label">Bookings Completed</span>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <span class="stat-number" data-target="98" data-suffix="%">0%</span>
+        <span class="stat-label">On-Time Guarantee</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ░░ CONTACT FORM + INFO ░░ -->
+<section class="section contact-section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- ── LEFT: Info Panel ── -->
+      <div data-aos="fade-right">
+        <div class="contact-info-card">
+          <span class="section-label" style="display:block;margin-bottom:14px;">Reach Us</span>
+          <h3>Get in <em style="color:var(--gold);font-style:italic;">Touch</em></h3>
+          <p>Our team is available around the clock to help you plan, book, and enjoy your luxury travel experience.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <h5>Phone</h5>
+              <p><a href="tel:+919876543210">+91 98765 43210</a><br/><a href="tel:+919876543211" style="font-size:0.82rem;color:var(--text-dim);">+91 98765 43211</a> (Alternate)</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h5>Email</h5>
+              <p><a href="mailto:hello@arrivingtravels.com">hello@arrivingtravels.com</a><br/><a href="mailto:bookings@arrivingtravels.com" style="font-size:0.82rem;color:var(--text-dim);">bookings@arrivingtravels.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h5>Office Address</h5>
+              <p>123 Luxury Lane, Premium District,<br/>Anna Nagar, Chennai — 600 040,<br/>Tamil Nadu, India</p>
+            </div>
+          </div>
+
+          <!-- Business Hours -->
+          <table class="hours-table">
+            <caption>Business Hours</caption>
+            <tr><td>Monday – Friday</td><td>7:00 AM – 10:00 PM</td></tr>
+            <tr><td>Saturday – Sunday</td><td>8:00 AM – 8:00 PM</td></tr>
+            <tr><td>Airport Transfers</td><td class="always-on">24 / 7 Always</td></tr>
+            <tr><td>Emergency Line</td><td class="always-on">24 / 7 Always</td></tr>
+          </table>
+
+          <!-- WhatsApp CTA -->
+          <a href="https://wa.me/919876543210?text=Hi%20Arriving%20Travels%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." class="wa-cta-btn" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.083.535 4.044 1.47 5.748L0 24l6.42-1.683A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.894 0-3.663-.54-5.16-1.476l-.37-.22-3.812.999 1.017-3.706-.24-.38A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+            Chat on WhatsApp
+          </a>
+
+          <!-- Social links -->
+          <div class="contact-socials">
+            <a href="#" class="contact-social-btn" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              FB
+            </a>
+            <a href="#" class="contact-social-btn" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              IG
+            </a>
+            <a href="#" class="contact-social-btn" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+              YT
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Booking Form ── -->
+      <div data-aos="fade-left">
+        <div class="contact-form-card">
+          <span class="section-label" style="display:block;margin-bottom:14px;">Booking Enquiry</span>
+          <h3>Plan Your <em style="color:var(--gold);font-style:italic;">Journey</em></h3>
+          <p>Fill in your details and we'll send you a personalised quote within 30 minutes during business hours.</p>
+
+          <!-- Form -->
+          <form id="contact-form" novalidate>
+
+            <!-- Row 1: Name + Phone -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="full-name">Full Name <span class="req">*</span></label>
+                <input type="text" id="full-name" name="full_name" placeholder="Your full name" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="req">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel" />
+              </div>
+            </div>
+
+            <!-- Row 2: Email + Service -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="service">Service Type <span class="req">*</span></label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="airport_transfer">Airport Transfer</option>
+                  <option value="chauffeur">Chauffeur / Full Day</option>
+                  <option value="outstation">Outstation Trip</option>
+                  <option value="tour_package">Tour Package</option>
+                  <option value="wedding">Wedding Journey</option>
+                  <option value="corporate">Corporate / Monthly</option>
+                  <option value="custom">Custom / Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 3: Date + Time -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="travel-date">Travel Date <span class="req">*</span></label>
+                <input type="date" id="travel-date" name="travel_date" required />
+              </div>
+              <div class="form-group">
+                <label for="travel-time">Pickup Time</label>
+                <input type="time" id="travel-time" name="travel_time" />
+              </div>
+            </div>
+
+            <!-- Row 4: Pickup + Drop -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickup">Pickup Location <span class="req">*</span></label>
+                <input type="text" id="pickup" name="pickup" placeholder="Address / Airport / Hotel" required />
+              </div>
+              <div class="form-group">
+                <label for="drop">Drop Location</label>
+                <input type="text" id="drop" name="drop" placeholder="Destination address" />
+              </div>
+            </div>
+
+            <!-- Passengers + Luggage -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="passengers">No. of Passengers</label>
+                <select id="passengers" name="passengers">
+                  <option value="1">1 Passenger</option>
+                  <option value="2">2 Passengers</option>
+                  <option value="3">3 Passengers</option>
+                  <option value="4" selected>4 Passengers</option>
+                  <option value="5">5 Passengers</option>
+                  <option value="6">6 Passengers</option>
+                  <option value="7+">7+ Passengers</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="luggage">Luggage Pieces</label>
+                <select id="luggage" name="luggage">
+                  <option value="0">No luggage</option>
+                  <option value="1">1 Piece</option>
+                  <option value="2" selected>2 Pieces</option>
+                  <option value="3">3 Pieces</option>
+                  <option value="4+">4+ Pieces</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Vehicle Preference -->
+            <div class="form-group">
+              <label>Vehicle Preference</label>
+              <div class="vehicle-selector">
+                <input type="radio" name="vehicle" id="v-sedan" value="sedan" class="vehicle-option" checked />
+                <label for="v-sedan">
+                  <span class="v-icon">🚗</span>
+                  <span>
+                    <span class="v-name">Executive Sedan</span>
+                    <span class="v-cap">Up to 4 pax</span>
+                  </span>
+                </label>
+
+                <input type="radio" name="vehicle" id="v-suv" value="suv" class="vehicle-option" />
+                <label for="v-suv">
+                  <span class="v-icon">🚙</span>
+                  <span>
+                    <span class="v-name">Luxury SUV</span>
+                    <span class="v-cap">Up to 6 pax</span>
+                  </span>
+                </label>
+
+                <input type="radio" name="vehicle" id="v-mpv" value="mpv" class="vehicle-option" />
+                <label for="v-mpv">
+                  <span class="v-icon">🚌</span>
+                  <span>
+                    <span class="v-name">Premium MPV</span>
+                    <span class="v-cap">Up to 7 pax</span>
+                  </span>
+                </label>
+
+                <input type="radio" name="vehicle" id="v-tempo" value="tempo" class="vehicle-option" />
+                <label for="v-tempo">
+                  <span class="v-icon">🚐</span>
+                  <span>
+                    <span class="v-name">Tempo Traveller</span>
+                    <span class="v-cap">Up to 17 pax</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message">Additional Requirements</label>
+              <textarea id="message" name="message" maxlength="500" placeholder="Special requests, flight number, hotel name, wheelchair access needs, child seat, etc."></textarea>
+              <div class="char-count"><span id="char-count">0</span> / 500</div>
+            </div>
+
+            <!-- How did you find us -->
+            <div class="form-group">
+              <label for="source">How Did You Find Us?</label>
+              <select id="source" name="source">
+                <option value="" disabled selected>Select an option</option>
+                <option value="google">Google Search</option>
+                <option value="whatsapp">WhatsApp Referral</option>
+                <option value="friend">Friend / Family Referral</option>
+                <option value="instagram">Instagram</option>
+                <option value="facebook">Facebook</option>
+                <option value="returning">I'm a Returning Client</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Submit area -->
+            <div class="form-submit-area">
+              <label class="form-privacy">
+                <input type="checkbox" id="privacy" required />
+                <span>I agree to be contacted by Arriving Travels regarding my enquiry. We do not share your data with third parties.</span>
+              </label>
+              <button type="submit" class="btn btn-gold" id="submit-btn">
+                <span>Send Enquiry</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Success State -->
+          <div class="form-success" id="form-success">
+            <div class="success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="var(--black)" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h4>Enquiry Received!</h4>
+            <p>Thank you for choosing Arriving Travels. Our team will contact you within <strong style="color:var(--gold);">30 minutes</strong> with your personalised quote and booking confirmation.</p>
+            <div class="success-ref" id="success-ref">REF: AT-000000</div>
+            <div style="margin-top:28px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+              <a href="https://wa.me/919876543210" class="btn btn-gold" target="_blank" rel="noopener" style="font-size:0.65rem;padding:12px 24px;">
+                <span>Track on WhatsApp</span>
+              </a>
+              <a href="index.html" class="btn btn-outline" style="font-size:0.65rem;padding:12px 24px;">
+                <span>Return Home</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /contact-layout -->
+  </div>
+</section>
+
+<!-- ░░ GOOGLE MAP ░░ -->
+<section class="section map-section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up" style="margin-bottom:40px;">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Our <em>Location</em></h2>
+    </div>
+    <div class="map-wrapper" data-aos="fade-up">
+      <!-- Google Maps embed for Chennai, India -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.1778!2d80.2060!3d13.0900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5265ea4f7d3361%3A0x6e61a70b6863d433!2sAnna%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Arriving Travels Location"
+        allowfullscreen></iframe>
+      <div class="map-overlay-info">
+        <h4>Arriving Travels HQ</h4>
+        <p>123 Luxury Lane<br/>Anna Nagar, Chennai — 600 040<br/>Tamil Nadu, India</p>
+        <a href="https://maps.google.com/?q=Anna+Nagar,Chennai" target="_blank" rel="noopener" class="map-direction-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FAQ SECTION ░░ -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <span class="section-label">Got Questions?</span>
+      <h2 class="section-title">Frequently <em>Asked</em></h2>
+      <div class="gold-divider" style="justify-content:center;"><div class="diamond"></div></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-list">
+
+        <div class="faq-item open">
+          <button class="faq-question">
+            How quickly will I receive a booking confirmation?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We confirm bookings within 30 minutes during business hours (7 AM – 10 PM). For urgent or same-day bookings, please call or WhatsApp directly for instant confirmation.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I book for the same day or last minute?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! We accommodate last-minute and same-day bookings subject to vehicle availability. For airport pickups especially, we recommend booking at least 4 hours in advance. Call us directly for urgent requests.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What payment methods do you accept?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We accept UPI (GPay, PhonePe, Paytm), bank transfer, cash, and all major credit/debit cards. Corporate clients can opt for monthly consolidated billing with GST invoice.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you track flights for airport pickups?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Absolutely. We monitor your flight in real-time. If your flight is delayed, we adjust the pickup time automatically. You'll never be kept waiting — we wait for you, not the other way round.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What is your cancellation policy?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Free cancellation up to 24 hours before your trip. Within 24 hours, a 25% cancellation fee applies. For emergencies or rescheduling, please contact us directly and we'll work with you.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I request a specific chauffeur?
+            <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! Returning clients can request a preferred driver by name, subject to availability. Corporate monthly clients are assigned a dedicated, consistent driver for the duration of their plan.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="faq-visual" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0729?w=700&q=80" alt="Luxury Vehicle Interior" class="faq-img" loading="lazy" />
+        <div class="faq-support-box">
+          <div class="support-badge">24 / 7 Support</div>
+          <p>Can't find what you're looking for? Our team is always ready to answer any question about our services, pricing or availability.</p>
+          <a href="tel:+919876543210" class="btn btn-gold" style="width:100%;justify-content:center;font-size:0.65rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>Call +91 98765 43210</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ FOOTER ░░ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="images/logo.jpeg" alt="Arriving Travels" onerror="this.style.display='none'" style="width:50px;height:50px;object-fit:contain;" />
+          <div class="logo-text">
+            <div class="name">Arriving Travels</div>
+            <div class="tagline">Journey Beyond Destination</div>
+          </div>
+        </div>
+        <p>Redefining travel with luxury, precision and passion. Every journey with us is a destination in itself.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/919876543210" class="social-link" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.083.535 4.044 1.47 5.748L0 24l6.42-1.683A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.894 0-3.663-.54-5.16-1.476l-.37-.22-3.812.999 1.017-3.706-.24-.38A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="tariff.html">Tariff</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="contact.html">Airport Transfers</a></li>
+          <li><a href="contact.html">Chauffeur Service</a></li>
+          <li><a href="packages.html">Bespoke Tours</a></li>
+          <li><a href="contact.html">Corporate Travel</a></li>
+          <li><a href="contact.html">Wedding Journeys</a></li>
+          <li><a href="contact.html">Outstation Trips</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+          <span>123 Luxury Lane, Anna Nagar, Chennai - 600040</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span><a href="tel:+919876543210">+91 98765 43210</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span><a href="mailto:hello@arrivingtravels.com">hello@arrivingtravels.com</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 <span class="gold">Arriving Travels</span>. All rights reserved.</p>
+      <p style="font-size:0.75rem;color:var(--text-dim);">Crafted with ♦ for discerning travellers</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ░░ FLOATING ELEMENTS ░░ -->
+<a href="https://wa.me/919876543210?text=Hi%20Arriving%20Travels%2C%20I%27d%20like%20to%20enquire%20about%20your%20services." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.083.535 4.044 1.47 5.748L0 24l6.42-1.683A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.894 0-3.663-.54-5.16-1.476l-.37-.22-3.812.999 1.017-3.706-.24-.38A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+</a>
+
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script src="Main.js"></script>
+<script>
+  /* ── Contact Form Logic ── */
+  (function () {
+    'use strict';
+
+    // Character counter
+    const msgArea = document.getElementById('message');
+    const charCount = document.getElementById('char-count');
+    if (msgArea && charCount) {
+      msgArea.addEventListener('input', () => {
+        charCount.textContent = msgArea.value.length;
+      });
+    }
+
+    // Set min date to today
+    const dateInput = document.getElementById('travel-date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+    }
+
+    // Form submit
+    const form = document.getElementById('contact-form');
+    const successEl = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+    const refEl = document.getElementById('success-ref');
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Basic validation
+        const name = document.getElementById('full-name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const service = document.getElementById('service').value;
+        const date = document.getElementById('travel-date').value;
+        const pickup = document.getElementById('pickup').value.trim();
+        const privacy = document.getElementById('privacy').checked;
+
+        if (!name || !phone || !service || !date || !pickup || !privacy) {
+          // Highlight empty required fields
+          [['full-name', name], ['phone', phone], ['service', service], ['travel-date', date], ['pickup', pickup]].forEach(([id, val]) => {
+            const el = document.getElementById(id);
+            if (el) el.style.borderColor = !val ? '#e57373' : '';
+          });
+          if (!privacy) {
+            document.getElementById('privacy').style.outline = '2px solid #e57373';
+          }
+          return;
+        }
+
+        // Disable button, show loading
+        submitBtn.disabled = true;
+        submitBtn.querySelector('span').textContent = 'Sending…';
+
+        // Simulate submission
+        setTimeout(() => {
+          // Generate reference number
+          const ref = 'AT-' + Date.now().toString().slice(-6);
+          if (refEl) refEl.textContent = 'Ref: ' + ref;
+
+          // Hide form, show success
+          form.style.display = 'none';
+          if (successEl) successEl.classList.add('visible');
+
+          // Scroll to success
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 1800);
+      });
+
+      // Real-time error clearing
+      form.querySelectorAll('input, select, textarea').forEach(el => {
+        el.addEventListener('input', () => { el.style.borderColor = ''; });
+        el.addEventListener('change', () => { el.style.borderColor = ''; });
+      });
+    }
+
+    // FAQ accordion (contact page)
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  })();
+</script>
+</body>
+</html>
