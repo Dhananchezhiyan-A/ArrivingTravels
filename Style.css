@@ -1418,3 +1418,8 @@ footer {
 .text-gold { color: var(--gold); }
 .mt-40 { margin-top: 40px; }
 .text-center { text-align: center; }
+
+.vehicle-pricing .price-cell .value {
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+}
